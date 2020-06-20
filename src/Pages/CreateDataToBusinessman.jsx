@@ -85,6 +85,10 @@ class CreateDataToBusinessman extends React.Component {
     }
 
 
+    componentDidMount() {
+        sessionStorage.setItem("pathname", window.location.pathname)
+    }
+
     handleChange(event) {
         let name = event.target.name;
         let value = event.target.value;
@@ -98,7 +102,6 @@ class CreateDataToBusinessman extends React.Component {
         const data = this.state;
         delete data.isRedirect;
         delete data.checked;
-        console.log("ochirilganlari", data);
         axios.post('http://localhost:9000/api/auth/createTadbirkorlik', data).then(res => {
             console.log(res)
             if (res.data === 'success') {
@@ -222,7 +225,7 @@ class CreateDataToBusinessman extends React.Component {
                                                 payType
                                     </InputLabel>
                                             <NativeSelect
-                                            value={this.state.payType}
+                                                value={this.state.payType}
                                                 inputProps={{
                                                     name: 'payType',
                                                     id: 'age-native-label-placeholder',
@@ -238,7 +241,7 @@ class CreateDataToBusinessman extends React.Component {
                                                 sex
                                     </InputLabel>
                                             <NativeSelect
-                                            value={this.state.sex}
+                                                value={this.state.sex}
                                                 inputProps={{
                                                     name: 'sex',
                                                     id: 'age-native-label-placeholder',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataGrid, GridColumn, NumberBox, GridColumnGroup, GridHeaderRow } from 'rc-easyui';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { Box, Card } from '@material-ui/core';
 import axios from 'axios';
@@ -9,6 +9,15 @@ import styles from '../style.module.css';
 import Grow from '@material-ui/core/Grow';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { Typography } from '@material-ui/core';
+
+
+
+
+
+
+
+
+
 
 class SideMenu1 extends React.Component {
     constructor(props) {
@@ -29,6 +38,7 @@ class SideMenu1 extends React.Component {
 
 
     componentDidMount() {
+        sessionStorage.setItem("pathname", window.location.pathname)
         axios.get('http://localhost:9000/api/auth/phisicals').then(res => {
             this.setState({
                 data_table: res.data,
@@ -45,10 +55,16 @@ class SideMenu1 extends React.Component {
         document.getElementById()
     }
 
+    componentWillUnmount(){}
+
 
 
 
     render() {
+
+        if(sessionStorage.getItem("pathname") !== '/'){
+            return <Redirect to={sessionStorage.getItem("pathname")} />
+        }
         return (
             <Grow in={this.state.checked}
                 style={{ transformOrigin: '0 0 0' }}
@@ -69,13 +85,13 @@ class SideMenu1 extends React.Component {
                     </Box>
                     {
 
-                        !this.state.isData ? 
-                        <Box my={4}>
-                            <LinearProgress style={{backgroundColor: '#FAFAFA'}} />
-                            <Typography align="center" variant="h6" style={{marginTop: 10, color: "grey"}}>
-                            {localStorage.getItem("language") === "ru" ? "загружается..." : "йукланмоқда..."}
-                            </Typography>
-                        </Box> :
+                        !this.state.isData ?
+                            <Box my={4}>
+                                <LinearProgress style={{ backgroundColor: '#FAFAFA' }} />
+                                <Typography align="center" variant="h6" style={{ marginTop: 10, color: "grey" }}>
+                                    {localStorage.getItem("language") === "ru" ? "загружается..." : "йукланмоқда..."}
+                                </Typography>
+                            </Box> :
                             <Card elevation={8} style={{ padding: '8px 4px' }}>
 
                                 <DataGrid

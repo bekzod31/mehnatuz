@@ -9,6 +9,7 @@ import Autentification from './Pages/Autentification';
 import Login from './Pages/Login';
 import Registration from './Pages/Registration';
 
+
 const rootReducer = combineReducers({
   forTemplate: forTemplate,
   AuthMe: AuthMe
@@ -18,13 +19,15 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 
 
 
+
+
 class App extends React.Component {
 
+  
 
   render() {
-
     let token = sessionStorage.getItem('token');
-    
+
     return (
       <Provider store={store}>
         <BrowserRouter>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { DataGrid, GridColumn, NumberBox, GridColumnGroup, GridHeaderRow } from 'rc-easyui';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { Box, Card } from '@material-ui/core';
 import axios from 'axios';

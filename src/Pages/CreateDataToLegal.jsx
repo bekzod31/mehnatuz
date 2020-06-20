@@ -82,6 +82,10 @@ class CreateDataToLegal extends React.Component {
         }
     }
 
+    componentDidMount() {
+        sessionStorage.setItem("pathname", window.location.pathname)
+    }
+
 
     handleChange(event) {
         let name = event.target.name;

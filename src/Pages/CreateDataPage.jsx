@@ -83,6 +83,10 @@ class CreateDataPage extends React.Component {
         }
     }
 
+    componentDidMount(){
+        sessionStorage.setItem("pathname", window.location.pathname)
+    }
+
 
     handleChange(event) {
         let name = event.target.name;
@@ -108,8 +112,6 @@ class CreateDataPage extends React.Component {
     }
 
     render() {
-        console.log("paytype", this.state.payType);
-        console.log("gender", this.state.gender);
         const { classes } = this.props;
         if (this.state.isRedirect) {
             return <Redirect to="/" />
@@ -144,11 +146,10 @@ class CreateDataPage extends React.Component {
                                 <Typography>Паспорт/Шахсиу маьлумотлар</Typography>
                                 <Grid container spacing={3}>
                                     <Grid item xs={3}>
-                                        {/* <Paper className={classes.paper}> */}
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">passportNumber</InputLabel>
+                                            <InputLabel htmlFor="passwordNumber">passportNumber</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="passwordNumber"
                                                 type="text"
                                                 name="passportNumber"
                                                 value={this.state.passportNumber}
@@ -157,9 +158,9 @@ class CreateDataPage extends React.Component {
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">fio</InputLabel>
+                                            <InputLabel htmlFor="fio">fio</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="fio"
                                                 type="text"
                                                 name="fio"
                                                 value={this.state.fio}
@@ -182,9 +183,9 @@ class CreateDataPage extends React.Component {
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">district</InputLabel>
+                                            <InputLabel htmlFor="district">district</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="district"
                                                 name="district"
                                                 value={this.state.district}
                                                 onChange={(e) => this.handleChange(e)}
@@ -193,23 +194,21 @@ class CreateDataPage extends React.Component {
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">region</InputLabel>
+                                            <InputLabel htmlFor="region">region</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="region"
                                                 name="region"
                                                 value={this.state.region}
                                                 onChange={(e) => this.handleChange(e)}
                                                 endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
-
-                                        {/* </Paper> */}
                                     </Grid>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">stir</InputLabel>
+                                            <InputLabel htmlFor="stir">stir</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="stir"
                                                 name="stir"
                                                 value={this.state.stir}
                                                 onChange={(e) => this.handleChange(e)}
@@ -217,9 +216,9 @@ class CreateDataPage extends React.Component {
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">businesName</InputLabel>
+                                            <InputLabel htmlFor="buinesName">businesName</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="buinesName"
                                                 name="businesName"
                                                 value={this.state.businesName}
                                                 onChange={(e) => this.handleChange(e)}
@@ -227,14 +226,14 @@ class CreateDataPage extends React.Component {
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel shrink htmlFor="age-native-label-placeholder">
+                                            <InputLabel shrink htmlFor="gender">
                                                 gender
                                     </InputLabel>
                                             <NativeSelect
                                                 value={this.props.gender}
                                                 inputProps={{
                                                     name: 'gender',
-                                                    id: 'age-native-label-placeholder',
+                                                    id: 'gender',
                                                 }}
                                                 onChange={(e) => this.handleChange(e)}
                                             >
@@ -243,9 +242,9 @@ class CreateDataPage extends React.Component {
                                             </NativeSelect>
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">direction</InputLabel>
+                                            <InputLabel htmlFor="direction">direction</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="direction"
                                                 name="direction"
                                                 value={this.state.direction}
                                                 onChange={(e) => this.handleChange(e)}
@@ -304,9 +303,7 @@ class CreateDataPage extends React.Component {
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={2}>
-                                        {/* <Paper className={classes.paper}> */}
                                         <Card className={classes.rootimg}>
-                                            {/* <CardActionArea> */}
                                             <CardMedia
                                                 component="img"
                                                 alt="Contemplative Reptile"
@@ -314,7 +311,6 @@ class CreateDataPage extends React.Component {
                                                 image="https://inst.eecs.berkeley.edu/~cs194-26/fa18/upload/files/proj3/cs194-26-adk/randomPerson.jpg"
                                                 title="Contemplative Reptile"
                                             />
-                                            {/* <CardContent> */}
                                             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                                                 <Box mt={1}>
                                                     <input
@@ -334,7 +330,6 @@ class CreateDataPage extends React.Component {
                                                 </Box>
                                             </div>
                                         </Card>
-                                        {/* </Paper> */}
                                     </Grid>
                                 </Grid>
                             </Box>
@@ -356,9 +351,9 @@ class CreateDataPage extends React.Component {
                                     </Grid>
                                     <Grid item xs={4}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">docSeria</InputLabel>
+                                            <InputLabel htmlFor="docSeria">docSeria</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="docSeria"
                                                 type="text"
                                                 name="docSeria"
                                                 value={this.state.docSeria}
@@ -390,14 +385,14 @@ class CreateDataPage extends React.Component {
                                 <Grid container direction="row" spacing={3}>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel shrink htmlFor="age-native-label-placeholder">
+                                            <InputLabel shrink htmlFor="payType">
                                                 payType
                                             </InputLabel>
                                             <NativeSelect
                                                 value={this.state.payType}
                                                 inputProps={{
                                                     name: 'payType',
-                                                    id: 'age-native-label-placeholder',
+                                                    id: 'payType',
                                                 }}
                                                 onChange={(e) => this.handleChange(e)}
                                             >
@@ -408,9 +403,9 @@ class CreateDataPage extends React.Component {
                                     </Grid>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">document</InputLabel>
+                                            <InputLabel htmlFor="document">document</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="document"
                                                 name="document"
                                                 value={this.state.document}
                                                 onChange={(e) => this.handleChange(e)}
@@ -421,9 +416,9 @@ class CreateDataPage extends React.Component {
                                     </Grid>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">serviceResult</InputLabel>
+                                            <InputLabel htmlFor="serviceResult">serviceResult</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="serviceResult"
                                                 name="serviceResult"
                                                 value={this.state.serviceResult}
                                                 onChange={(e) => this.handleChange(e)}
@@ -434,9 +429,9 @@ class CreateDataPage extends React.Component {
                                     </Grid>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">image</InputLabel>
+                                            <InputLabel htmlFor="image">image</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="image"
                                                 name="image"
                                                 value={this.state.image}
                                                 onChange={(e) => this.handleChange(e)}

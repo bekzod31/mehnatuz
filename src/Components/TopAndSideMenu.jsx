@@ -16,7 +16,7 @@ import ListItem from '@material-ui/core/ListItem';
 import useStyles from '../Constants/Styles';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { NavLink } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import Routes from '../Constants/Routes';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -33,11 +33,12 @@ import styles from '../style.module.css';
 const TopAndSideMenu = (props) => {
 
 
-  const [sel, setSel] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [name, setName] = useState('');
   const [language, setLanguage] = useState('')
   const classes = useStyles();
+
+
 
 
   const handleClick = (event) => {
@@ -48,9 +49,8 @@ const TopAndSideMenu = (props) => {
     setAnchorEl(null);
   };
 
-  const onSend = (value, index) => {
+  const onSend = (value,index) => {
     setName(value);
-    setSel(index)
   }
 
   function handleLogOut() {
@@ -156,11 +156,11 @@ const TopAndSideMenu = (props) => {
         <List>
           {
             Routes.map((element, index) => {
-              const active =  index === sel ? classes.activeSelect : classes.inactiveSelect;
+              const active =  element.path === sessionStorage.getItem("pathname") ? classes.activeSelect : classes.inactiveSelect;
               return (
                 index < 6 ?
-                  <NavLink to={element.path} key={index} onClick={() => onSend(language === "ru" ? element.sidebarNameRu : element.sidebarNameUz, index)} style={{ textDecoration: 'none', color: 'black' }} >
-                    <ListItem button className={active}>
+                  <NavLink to={element.path} key={index} onClick={() => onSend(language === "ru" ? element.sidebarNameRu : element.sidebarNameUz,index)} style={{ textDecoration: 'none', color: 'black' }} >
+                    <ListItem button className={active} onClick={() => sessionStorage.setItem("pathname", element.path)}>
                       <ListItemIcon style={{ marginRight: 0 }}>
                         {element.icon}
                       </ListItemIcon>

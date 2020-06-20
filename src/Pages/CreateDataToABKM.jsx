@@ -85,6 +85,9 @@ class CreateDataToABKM extends React.Component {
             checked: true
         }
     }
+    componentDidMount() {
+        sessionStorage.setItem("pathname", window.location.pathname)
+    }
 
 
     handleChange(event) {
@@ -100,7 +103,6 @@ class CreateDataToABKM extends React.Component {
         const data = this.state;
         delete data.isRedirect;
         delete data.checked;
-        console.log("ochirilganlari", data);
         axios.post('http://localhost:9000/api/auth/createAbmk', data).then(res => {
             console.log(res)
             if (res.data === 'success') {
@@ -234,7 +236,7 @@ class CreateDataToABKM extends React.Component {
                                                 sex
                                     </InputLabel>
                                             <NativeSelect
-                                            value={this.state.sex}
+                                                value={this.state.sex}
                                                 inputProps={{
                                                     name: 'sex',
                                                     id: 'age-native-label-placeholder',
