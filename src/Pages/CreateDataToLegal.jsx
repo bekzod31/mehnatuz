@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { Card, TextField, Box } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles'
 import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
@@ -169,7 +168,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="fio"
                                                 value={this.state.fio}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -194,7 +192,6 @@ class CreateDataToLegal extends React.Component {
                                                 value={this.state.district}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
 
@@ -210,7 +207,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="stir"
                                                 value={this.state.stir}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -220,7 +216,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="branch"
                                                 value={this.state.branch}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -246,7 +241,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="electronicPic"
                                                 value={this.state.electronicPic}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -258,7 +252,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="region"
                                                 value={this.state.region}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -268,7 +261,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="performer"
                                                 value={this.state.performer}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -278,7 +270,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="address"
                                                 value={this.state.address}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -343,7 +334,6 @@ class CreateDataToLegal extends React.Component {
                                                 value={this.state.phone}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -356,7 +346,6 @@ class CreateDataToLegal extends React.Component {
                                                 name="seriaAndNumber"
                                                 value={this.state.seriaAndNumber}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -383,14 +372,14 @@ class CreateDataToLegal extends React.Component {
                                 <Grid container direction="row" spacing={3}>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel shrink htmlFor="age-native-label-placeholder">
+                                            <InputLabel shrink htmlFor="payType">
                                                 payType
                                             </InputLabel>
                                             <NativeSelect
                                                 value={this.state.payType}
                                                 inputProps={{
                                                     name: 'payType',
-                                                    id: 'age-native-label-placeholder',
+                                                    id: 'payType',
                                                 }}
                                                 onChange={(e) => this.handleChange(e)}
                                             >
@@ -408,7 +397,6 @@ class CreateDataToLegal extends React.Component {
                                                 value={this.state.document}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -421,21 +409,19 @@ class CreateDataToLegal extends React.Component {
                                                 value={this.state.serviceResult}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="email"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
                                     <Grid item xs={3}>
                                         <FormControl fullWidth className={classes.margin}>
-                                            <InputLabel htmlFor="standard-adornment-amount">idNumber</InputLabel>
+                                        <InputLabel htmlFor="idNumber">idNumber</InputLabel>
                                             <Input
-                                                id="standard-adornment-amount"
+                                                id="idNumber"
                                                 name="idNumber"
+                                                type="text"
                                                 value={this.state.idNumber}
                                                 onChange={(e) => this.handleChange(e)}
-                                                type="email"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
-                                            />
+                                           />
                                         </FormControl>
                                     </Grid>
                                 </Grid>

@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid';
 import { Card, TextField, Box } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles'
 import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
@@ -157,7 +156,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="appliedDate"
                                                 value={this.state.appliedDate}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -168,7 +166,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="fio"
                                                 value={this.state.fio}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -193,7 +190,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 value={this.state.district}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -203,7 +199,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="region"
                                                 value={this.state.region}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
 
@@ -217,7 +212,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="stir"
                                                 value={this.state.stir}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -259,7 +253,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="performer"
                                                 value={this.state.performer}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -299,7 +292,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="idNumber"
                                                 value={this.state.idNumber}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -309,7 +301,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="address"
                                                 value={this.state.address}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                         <FormControl fullWidth className={classes.margin}>
@@ -333,7 +324,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="rRegion"
                                                 value={this.state.rRegion}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -384,7 +374,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 value={this.state.phone}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -397,7 +386,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="seriaAndNumber"
                                                 value={this.state.seriaAndNumber}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -410,7 +398,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 name="rDistrict"
                                                 value={this.state.rDistrict}
                                                 onChange={(e) => this.handleChange(e)}
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -428,7 +415,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 value={this.state.serviceResult}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -441,7 +427,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 value={this.state.document}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
@@ -454,7 +439,6 @@ class CreateDataToBusinessman extends React.Component {
                                                 value={this.state.rSeriaNumber}
                                                 onChange={(e) => this.handleChange(e)}
                                                 type="text"
-                                                endAdornment={<InputAdornment position="end"></InputAdornment>}
                                             />
                                         </FormControl>
                                     </Grid>
